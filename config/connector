@@ -1,0 +1,12 @@
+#!/sbin/openrc-run                                                                                                                                                                                                             
+                                                                                                                                                                                                                               
+name=$RC_SVCNAME                                                                                                                                                                                                               
+description="Connector service"                                                                                                                                                                                                
+supervisor="supervise-daemon"                                                                                                                                                                                                  
+command="/usr/bin/start_connector.sh"                                                                                                                                                                                          
+pidfile="/run/$RC_SVCNAME.pid"                                                                                                                                                                                                 
+command_user="connuser:conngroup"                                                                                                                                                                                              
+                                                                                                                                                                                                                               
+depend() {                                                                                                                                                                                                                     
+        after net                                                                                                                                                                                                              
+} 
